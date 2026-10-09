@@ -7,6 +7,124 @@ const hero = document.querySelector('.hero');
 const portrait = document.querySelector('.portrait-placeholder');
 const heroName = document.querySelector('.hero-name');
 const scrollAnimatedSections = [...document.querySelectorAll('.services-visual, .skills, .contact')];
+const pageLoader = document.querySelector('#page-loader');
+const loaderCounter = document.querySelector('#loader-counter');
+const loaderStatus = document.querySelector('#loader-status');
+const loaderTerminal = document.querySelector('#loader-terminal');
+const terminalOutput = document.querySelector('#terminal-output');
+const loaderSheet = document.querySelector('.loader-sheet');
+let portraitTarget = null;
+document.body.classList.add('is-loading');
+
+const terminalLines = [
+  '$ whoami                              adrian',
+  '$ uname -a                            PortfolioOS 2026 x86_64',
+  '$ sudo systemctl start visual-engine  [ OK ]',
+  '[auth] secure session established',
+  '[boot] loading kernel modules ........ done',
+  '[boot] checking permission matrix .... done',
+  '[net ] handshake /localhost:4173 ..... connected',
+  '[deps] resolving interface packages .. 42 modules',
+  '[deps] cache warmed .................. 128 assets',
+  '[ui  ] compiling motion system ....... done',
+  '[ui  ] mounting scroll observers ...... done',
+  '[img ] decoding profile portrait ...... 1024x1536',
+  '[3d  ] initializing perspective ...... 1400px',
+  '[test] checking responsive layout .... passed',
+  '[test] checking interaction states .... passed',
+  '[sys ] memory allocation ............. stable',
+  '[sys ] thread pool ................... 08 workers',
+  '[sys ] event loop .................... synchronized',
+  '[db  ] opening local data channel ..... connected',
+  '[db  ] indexing project metadata ....... complete',
+  '[auth] token rotation ................. verified',
+  '[auth] access policy ................... enforced',
+  '[cache] binary stream cache ........... warm',
+  '[perf] frame budget ................... 60fps',
+  '[perf] layout shift ................... 0.00',
+  '[perf] image decode ................... optimized',
+  '[css ] responsive breakpoints .......... loaded',
+  '[css ] motion preferences .............. detected',
+  '[web ] semantic nodes .................. mounted',
+  '[web ] navigation anchors .............. linked',
+  '[3d  ] card depth layers ............... aligned',
+  '[3d  ] pointer interaction ............. armed',
+  '[scan] searching visual modules ...........',
+  '[scan] searching profile data ............',
+  '[scan] searching available routes ........',
+  '[sys ] visual experience ............. ready',
+  '> launching portfolio interface ...... READY',
+  '> SEARCHING.....'
+];
+
+const binaryField = document.querySelector('#binary-field');
+for (let column = 0; column < 30; column += 1) {
+  const stream = document.createElement('span');
+  stream.className = 'binary-stream';
+  stream.style.setProperty('--stream-delay', `${(column % 7) * -0.7}s`);
+  stream.style.setProperty('--stream-duration', `${3 + (column % 4)}s`);
+  stream.textContent = Array.from({ length: 44 }, () => Math.random() > .5 ? '1' : '0').join('\n');
+  binaryField.appendChild(stream);
+}
+
+const revealTerminalLines = () => {
+  terminalLines.forEach((line, index) => {
+    window.setTimeout(() => {
+      const lineElement = document.createElement('div');
+      lineElement.textContent = line;
+      terminalOutput.appendChild(lineElement);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }, index * 135);
+  });
+};
+
+let loaderProgress = 0;
+const loaderStartedAt = performance.now();
+const loaderTimer = window.setInterval(() => {
+  loaderProgress = Math.min(100, Math.round(((performance.now() - loaderStartedAt) / 7000) * 100));
+  loaderCounter.textContent = String(Math.min(loaderProgress, 100)).padStart(2, '0');
+  if (loaderProgress >= 20 && !pageLoader.classList.contains('terminal-open')) {
+    pageLoader.classList.add('terminal-open');
+    loaderStatus.textContent = 'TERMINAL ONLINE';
+    loaderTerminal.setAttribute('aria-hidden', 'false');
+    revealTerminalLines();
+  }
+  if (loaderProgress >= 80 && !pageLoader.classList.contains('portrait-open')) {
+    const bounds = portrait.getBoundingClientRect();
+    portraitTarget = { top: bounds.top, left: bounds.left, width: bounds.width, height: bounds.height };
+    pageLoader.classList.add('portrait-open');
+    hero.classList.add('is-portrait-hovered');
+    portrait.classList.add('is-loader-portrait');
+  }
+  if (loaderProgress >= 100) {
+    window.clearInterval(loaderTimer);
+    loaderStatus.textContent = 'READY';
+    pageLoader.classList.add('sheet-open');
+    loaderSheet.setAttribute('aria-hidden', 'false');
+    loaderSheet.style.height = '100vh';
+    if (portraitTarget) {
+      portrait.classList.add('is-loader-settling');
+      portrait.style.top = `${portraitTarget.top}px`;
+      portrait.style.left = `${portraitTarget.left}px`;
+      portrait.style.width = `${portraitTarget.width}px`;
+      portrait.style.height = `${portraitTarget.height}px`;
+      portrait.style.transform = 'translate(0, 0) scale(1)';
+    }
+    window.setTimeout(() => pageLoader.classList.add('is-complete'), 1250);
+    window.setTimeout(() => {
+      pageLoader.remove();
+      portrait.classList.remove('is-loader-portrait');
+      portrait.classList.remove('is-loader-settling');
+      portrait.style.removeProperty('top');
+      portrait.style.removeProperty('left');
+      portrait.style.removeProperty('width');
+      portrait.style.removeProperty('height');
+      portrait.style.removeProperty('transform');
+      hero.classList.remove('is-portrait-hovered');
+      document.body.classList.remove('is-loading');
+    }, 1800);
+  }
+}, 34);
 
 portrait.addEventListener('mouseenter', () => hero.classList.add('is-portrait-hovered'));
 portrait.addEventListener('mouseleave', () => hero.classList.remove('is-portrait-hovered'));
