@@ -3,6 +3,14 @@ const header = document.querySelector('.site-header');
 const projectSection = document.querySelector('.projects');
 const projectCards = [...document.querySelectorAll('.project')];
 const focusText = document.querySelector('.about-lead');
+const hero = document.querySelector('.hero');
+const portrait = document.querySelector('.portrait-placeholder');
+const heroName = document.querySelector('.hero-name');
+
+portrait.addEventListener('mouseenter', () => hero.classList.add('is-portrait-hovered'));
+portrait.addEventListener('mouseleave', () => hero.classList.remove('is-portrait-hovered'));
+heroName.addEventListener('animationend', () => heroName.classList.add('is-ready'));
+window.setTimeout(() => heroName.classList.add('is-ready'), 1600);
 
 document.querySelectorAll('.word-reveal').forEach((element) => {
   element.innerHTML = element.textContent.trim().split(/\s+/).map((word) => `<span class="word">${word}</span>`).join(' ');
