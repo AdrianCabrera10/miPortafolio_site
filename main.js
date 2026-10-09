@@ -6,6 +6,7 @@ const focusText = document.querySelector('.about-lead');
 const hero = document.querySelector('.hero');
 const portrait = document.querySelector('.portrait-placeholder');
 const heroName = document.querySelector('.hero-name');
+const scrollAnimatedSections = [...document.querySelectorAll('.services-visual, .skills, .contact')];
 
 portrait.addEventListener('mouseenter', () => hero.classList.add('is-portrait-hovered'));
 portrait.addEventListener('mouseleave', () => hero.classList.remove('is-portrait-hovered'));
@@ -117,6 +118,11 @@ const updateScrollMotion = () => {
     section.querySelectorAll('.word-reveal').forEach((reveal) => reveal.classList.toggle('is-visible', isInView));
     const distanceFromCenter = (bounds.top + bounds.height / 2 - window.innerHeight / 2) / window.innerHeight;
     section.style.setProperty('--scroll-drift', `${Math.max(-1, Math.min(1, distanceFromCenter))}`);
+  });
+  scrollAnimatedSections.forEach((section) => {
+    const bounds = section.getBoundingClientRect();
+    const isInView = bounds.top < window.innerHeight * 0.86 && bounds.bottom > window.innerHeight * 0.14;
+    section.classList.toggle('is-scroll-visible', isInView);
   });
   updateFocusShadow();
   projectCards.forEach((card, index) => {
