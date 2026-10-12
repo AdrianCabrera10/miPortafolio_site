@@ -2,6 +2,8 @@ const cursor = document.querySelector('.cursor');
 const header = document.querySelector('.site-header');
 const projectSection = document.querySelector('.projects');
 const projectCards = [...document.querySelectorAll('.project')];
+const projectDetail = document.querySelector('#project-one-detail');
+const detailImageViewer = projectDetail.querySelector('.detail-image-viewer');
 const focusText = document.querySelector('.about-lead');
 const hero = document.querySelector('.hero');
 const portrait = document.querySelector('.portrait-placeholder');
@@ -15,6 +17,67 @@ const terminalOutput = document.querySelector('#terminal-output');
 const loaderSheet = document.querySelector('.loader-sheet');
 let portraitTarget = null;
 document.body.classList.add('is-loading');
+
+document.querySelector('.project-collection-open').addEventListener('click', () => projectDetail.showModal());
+projectDetail.querySelector('.project-detail-close').addEventListener('click', () => projectDetail.close());
+projectDetail.addEventListener('click', (event) => {
+  if (event.target === projectDetail) projectDetail.close();
+});
+
+const detailImageButtons = [...projectDetail.querySelectorAll('.detail-image-open')];
+const detailViewerImage = detailImageViewer.querySelector('.detail-viewer-image');
+const detailViewerCaption = detailImageViewer.querySelector('.detail-viewer-caption');
+let detailViewerIndex = 0;
+
+const showDetailImage = (index) => {
+  detailViewerIndex = (index + detailImageButtons.length) % detailImageButtons.length;
+  const button = detailImageButtons[detailViewerIndex];
+  const image = button.querySelector('img');
+  detailViewerImage.src = image.currentSrc || image.src;
+  detailViewerImage.alt = image.alt;
+  detailViewerCaption.textContent = `${String(detailViewerIndex + 1).padStart(2, '0')} / ${String(detailImageButtons.length).padStart(2, '0')}  ·  ${button.closest('figure').querySelector('figcaption').textContent}`;
+};
+
+const closeDetailImageViewer = () => {
+  detailImageViewer.hidden = true;
+  detailImageButtons[detailViewerIndex].focus();
+};
+
+detailImageButtons.forEach((button, index) => button.addEventListener('click', () => {
+  showDetailImage(index);
+  detailImageViewer.hidden = false;
+  detailImageViewer.querySelector('.detail-viewer-close').focus();
+}));
+detailImageViewer.querySelector('.detail-viewer-close').addEventListener('click', closeDetailImageViewer);
+detailImageViewer.querySelector('.detail-viewer-prev').addEventListener('click', () => showDetailImage(detailViewerIndex - 1));
+detailImageViewer.querySelector('.detail-viewer-next').addEventListener('click', () => showDetailImage(detailViewerIndex + 1));
+detailImageViewer.addEventListener('click', (event) => {
+  if (event.target === detailImageViewer) closeDetailImageViewer();
+});
+projectDetail.addEventListener('cancel', (event) => {
+  if (!detailImageViewer.hidden) {
+    event.preventDefault();
+    closeDetailImageViewer();
+  }
+});
+projectDetail.addEventListener('keydown', (event) => {
+  if (detailImageViewer.hidden) return;
+  if (event.key === 'ArrowLeft') showDetailImage(detailViewerIndex - 1);
+  if (event.key === 'ArrowRight') showDetailImage(detailViewerIndex + 1);
+});
+detailImageViewer.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  const controls = [...detailImageViewer.querySelectorAll('button')];
+  const firstControl = controls[0];
+  const lastControl = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === firstControl) {
+    event.preventDefault();
+    lastControl.focus();
+  } else if (!event.shiftKey && document.activeElement === lastControl) {
+    event.preventDefault();
+    firstControl.focus();
+  }
+});
 
 const terminalLines = [
   '$ whoami                              adrian',
@@ -135,7 +198,7 @@ document.querySelectorAll('.word-reveal').forEach((element) => {
   element.innerHTML = element.textContent.trim().split(/\s+/).map((word) => `<span class="word">${word}</span>`).join(' ');
 });
 
-const letterMotionTargets = document.querySelectorAll('.word-reveal, .section-index, .manifesto-bottom p, .about-copy p, .tech-heading h2, .tech-row h3, .project-info p, .contact-content > p, .contact-link');
+const letterMotionTargets = document.querySelectorAll('.word-reveal, .section-index, .manifesto-bottom p, .about-copy p, .tech-heading h2, .tech-row h3, .project-info p:not(.project-description), .contact-content > p, .contact-link');
 const hoverMessages = new Map([
   ['.manifesto h1', 'MI MÉTODO: OBSERVAR · PENSAR · CREAR'],
   ['.about-lead', 'MI ENFOQUE: CLARIDAD QUE SE CONVIERTE EN IMPACTO'],
@@ -155,7 +218,7 @@ hoverMessages.forEach((message, selector) => {
 });
 
 document.querySelectorAll('.project-info h3').forEach((element, index) => {
-  element.dataset.message = ['01 / IDENTIDAD + WEB', '02 / PRODUCTO DIGITAL', '03 / DIRECCIÓN DE ARTE'][index];
+  element.dataset.message = ['01 / APP OPERATIVA + GPS', '02 / PRODUCTO DIGITAL', '03 / DIRECCIÓN DE ARTE'][index];
   element.classList.add('has-hover-message');
 });
 
