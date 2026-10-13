@@ -345,6 +345,127 @@ body.is-loading .hero .portrait-placeholder.is-loader-portrait img { width: 100%
 @media (prefers-reduced-motion: reduce) {
   .deck-card, .project-gallery-cover, .project-collection-open, .project-collection-open b { transition: none; }
 }
+
+/* Estilo final del caso Casita Colonial */
+.project-casita { background: #e9e6de; color: #272823; }
+.project-casita .project-info > span { color: #76766e; }
+.project-casita .project-description { color: #4c4d47; }
+.project-casita .project-tags li { border-color: #c7c3b9; background: #f7f5ef; color: #353630; }
+.project-casita .deck-card-back { background: #49534b; }
+.project-casita .deck-card-mid { background: #a26850; }
+.project-casita .deck-card-front { background: #bbb9ad; }
+.project-casita .project-info .casita-live-link { min-height: 50px; gap: 30px; padding: 0 23px; border-color: #96553f; background: #96553f; color: #fffaf4; font-size: 12px; font-weight: 700; letter-spacing: .1em; box-shadow: 0 8px 18px rgba(87,54,42,.18); }
+.project-casita .project-info .casita-live-link:hover, .project-casita .project-info .casita-live-link:focus-visible { border-color: #75402f; background: #75402f; color: #fff; box-shadow: 0 11px 24px rgba(87,54,42,.24); }
+.project-detail-casita { background: #222522; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #c18a6d; }
+.project-detail-casita .project-detail-hero-image { background: #343a35; }
+.project-detail-casita .detail-tags li { border-color: #555d56; background: #303632; color: #eceae3; }
+.project-detail-casita .detail-tags li:hover { border-color: #c18a6d; background: #57463b; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #464c47; background: #2b302c; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #a7795f; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #c18a6d; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #444a45; }
+.project-detail-casita .detail-stack > .mono { color: #c9c9c1; }
+.project-detail-casita .project-detail-gallery figure, .project-detail-casita .casita-role-card { border-color: #464c47; background: #2b302c; }
+.project-detail-casita .casita-role-card > .mono { color: #c18a6d; }
+.project-detail-casita .casita-role-card p { color: #d5d4cd; }
+.project-detail-casita .casita-role-card a { border-color: #a8654b; background: #a8654b; color: #fffaf4; font-size: 11px; box-shadow: 0 8px 18px rgba(0,0,0,.2); }
+.project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { background: #854b38; color: #fff; }
+
+/* Ajuste final del tercer proyecto y legibilidad del título */
+.project-acprogramador .project-info h3 { font-size: clamp(2.8rem, 4.8vw, 5.5rem); }
+.project-detail-acprogramador .project-detail-header h2 { font-size: clamp(3.5rem, 8vw, 8.8rem); }
+.project-acprogramador { background: #e5e1eb; color: #211d2a; }
+.project-acprogramador .project-info > span { color: #716881; }
+.project-acprogramador .project-description { color: #484351; }
+.project-acprogramador .project-tags li { border-color: #c4bdcf; background: #f1eef5; color: #373141; }
+.project-acprogramador .project-info .acprogramador-live-link { min-height: 50px; border-color: #64498a; background: #64498a; color: #fff; }
+.project-detail-acprogramador { background: #191720; }
+.project-detail-acprogramador .detail-eyebrow, .project-detail-acprogramador .detail-section-index, .project-detail-acprogramador .detail-section-heading > p { color: #b7a1da; }
+.project-detail-acprogramador .project-detail-grid article, .project-detail-acprogramador .project-detail-grid article:nth-child(2n) { border-color: #403a49; background: #25232c; }
+.project-detail-acprogramador .project-detail-grid article:hover { border-color: #8b70ae; }
+.project-detail-acprogramador .detail-gallery-section, .project-detail-acprogramador .detail-facts, .project-detail-acprogramador .detail-facts > div, .project-detail-acprogramador .detail-stack, .project-detail-acprogramador .project-detail-footer { border-color: #3b3743; }
+.project-detail-acprogramador .project-detail-gallery figure, .project-detail-acprogramador .casita-role-card { border-color: #423b4d; background: #25232c; }
+@media (max-width: 800px) {
+  .project-acprogramador .project-info h3 { font-size: clamp(2.55rem, 10vw, 4.1rem); }
+  .project-detail-acprogramador .project-detail-header h2 { font-size: clamp(3.1rem, 10vw, 4.6rem); }
+}
+
+/* Ac_Programador: lavanda, ciruela y grafito */
+.project-acprogramador { background: #e3dfeb; color: #211d2a; }
+.project-acprogramador::before { position: absolute; inset: 0; background: radial-gradient(ellipse at 94% 8%, rgba(255,255,255,.74), transparent 38%), linear-gradient(115deg, rgba(116,86,158,.08), transparent 56%); content: ''; pointer-events: none; }
+.project-acprogramador .project-info { z-index: 2; }
+.project-acprogramador .project-info h3 { font-size: clamp(3.15rem, 6.1vw, 6.8rem); }
+.project-acprogramador .project-info > span { color: #716881; opacity: 1; }
+.project-acprogramador .project-description { color: #484351; }
+.project-acprogramador .project-tags li { border-color: #c4bdcf; background: #f0edf4; color: #373141; }
+.project-acprogramador .project-gallery { aspect-ratio: 1.45 / 1; }
+.project-acprogramador .project-gallery-cover { border-color: #f4f0fa; box-shadow: 0 20px 48px rgba(31,23,42,.26); }
+.project-acprogramador .deck-card-back { background: #292433; }
+.project-acprogramador .deck-card-mid { background: #76599b; }
+.project-acprogramador .deck-card-front { background: #ada2bb; }
+.project-acprogramador .project-info .acprogramador-live-link { display: inline-flex; align-items: center; gap: 28px; min-height: 50px; margin-top: 28px; padding: 0 22px; border: 1px solid #64498a; border-radius: 3px; background: #64498a; color: #fff; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; box-shadow: 0 8px 18px rgba(59,42,78,.18); transition: background .25s, transform .25s, box-shadow .25s; }
+.project-acprogramador .project-info .acprogramador-live-link::after { content: '↗'; font-size: 16px; transition: transform .25s; }
+.project-acprogramador .project-info .acprogramador-live-link:hover, .project-acprogramador .project-info .acprogramador-live-link:focus-visible { background: #49345f; box-shadow: 0 11px 24px rgba(59,42,78,.25); transform: translateY(-2px); }
+.project-acprogramador .project-info .acprogramador-live-link:hover::after, .project-acprogramador .project-info .acprogramador-live-link:focus-visible::after { transform: translate(3px, -3px); }
+.project-detail-acprogramador { background: #191720; }
+.project-detail-acprogramador .detail-eyebrow, .project-detail-acprogramador .detail-section-index, .project-detail-acprogramador .detail-section-heading > p { color: #b7a1da; }
+.project-detail-acprogramador .detail-eyebrow span { color: #d7c9ed; }
+.project-detail-acprogramador .project-detail-hero-image { background: #282431; box-shadow: 0 18px 52px rgba(0,0,0,.32); }
+.project-detail-acprogramador .detail-status-dot { background: #b99be9; box-shadow: 0 0 0 3px rgba(185,155,233,.15), 0 0 14px rgba(185,155,233,.35); }
+.project-detail-acprogramador .detail-tags li { border-color: #5b5269; background: #2a2732; color: #eee8f7; }
+.project-detail-acprogramador .detail-tags li:hover { border-color: #ad8cdb; background: #554171; }
+.project-detail-acprogramador .project-detail-grid article, .project-detail-acprogramador .project-detail-grid article:nth-child(2n) { border-color: #403a49; background: #25232c; }
+.project-detail-acprogramador .project-detail-grid article:hover { border-color: #8b70ae; box-shadow: 0 12px 28px rgba(0,0,0,.26); }
+.project-detail-acprogramador .project-detail-grid article::after { border-color: rgba(176,147,215,.2); }
+.project-detail-acprogramador .project-detail-grid .mono, .project-detail-acprogramador .project-detail-footer .mono { color: #b7a1da; }
+.project-detail-acprogramador .detail-gallery-section, .project-detail-acprogramador .detail-facts, .project-detail-acprogramador .detail-facts > div, .project-detail-acprogramador .detail-stack, .project-detail-acprogramador .project-detail-footer { border-color: #3b3743; }
+.project-detail-acprogramador .detail-stack > .mono { color: #b8afc5; }
+.project-detail-acprogramador .project-detail-gallery figure, .project-detail-acprogramador .casita-role-card { border-color: #423b4d; background: #25232c; }
+.project-detail-acprogramador .casita-role-card > .mono { color: #b7a1da; }
+.project-detail-acprogramador .casita-role-card p { color: #d0cbd9; }
+.project-detail-acprogramador .casita-role-card a { border-color: #715293; background: #715293; color: #fff; font-size: 11px; box-shadow: 0 8px 18px rgba(0,0,0,.22); }
+.project-detail-acprogramador .casita-role-card a:hover, .project-detail-acprogramador .casita-role-card a:focus-visible { background: #533d70; color: #fff; }
+.project-detail-acprogramador .detail-viewer-nav { border-color: #8773a5; background: #292532; }
+.project-detail-acprogramador .detail-viewer-nav:hover { background: #624a7e; }
+.project-detail-acprogramador .detail-viewer-close { background: #8f4052; border-color: #bc7181; }
+@media (max-width: 800px) {
+  .project-acprogramador .project-info h3 { font-size: clamp(3.1rem, 13vw, 5.6rem); }
+}
+
+/* Acabado minimalista y enlace destacado para Casita Colonial */
+.project-casita { background: #e7e4dc; color: #262824; }
+.project-casita .project-info > span { color: #76756d; }
+.project-casita .project-description { color: #4e504a; }
+.project-casita .project-tags li { border-color: #c7c4bb; background: #f2f0ea; color: #343630; }
+.project-casita .deck-card-back { background: #424943; }
+.project-casita .deck-card-mid { background: #a16f57; }
+.project-casita .deck-card-front { background: #b9b8ad; }
+.project-casita .project-info .casita-live-link { display: inline-flex; align-items: center; gap: 18px; margin-top: 28px; padding: 14px 19px; border: 1px solid #343a34; border-radius: 3px; background: #343a34; color: #f7f5ef; font-size: 10px; letter-spacing: .1em; text-decoration: none; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease; }
+.project-casita .project-info .casita-live-link::after { content: '↗'; font-size: 16px; transition: transform .25s ease; }
+.project-casita .project-info .casita-live-link:hover, .project-casita .project-info .casita-live-link:focus-visible { border-color: #a16f57; background: #a16f57; color: #fff; opacity: 1; transform: translateY(-2px); }
+.project-casita .project-info .casita-live-link:hover::after, .project-casita .project-info .casita-live-link:focus-visible::after { transform: translate(3px, -3px); }
+.project-detail-casita { background: #202321; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #c49a7a; }
+.project-detail-casita .detail-eyebrow span { color: #d8d4ca; }
+.project-detail-casita .project-detail-hero-image { background: #343a35; }
+.project-detail-casita .detail-tags li { border-color: #5b625b; background: #303632; color: #e8e6de; }
+.project-detail-casita .detail-tags li:hover { border-color: #c49a7a; background: #655044; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #454b46; background: #2b302d; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #9b806b; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #c49a7a; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #414742; }
+.project-detail-casita .detail-stack > .mono { color: #c9c9bf; }
+.project-detail-casita .project-detail-gallery figure { border-color: #454b46; background: #292e2b; }
+.project-detail-casita .casita-role-card { border-color: #4c514c; background: #292e2b; }
+.project-detail-casita .casita-role-card > .mono { color: #c49a7a; }
+.project-detail-casita .casita-role-card p { color: #d2d1ca; }
+.project-detail-casita .casita-role-card a { display: inline-flex; align-items: center; gap: 12px; width: fit-content; padding: 15px 19px; border: 1px solid #c49a7a; border-radius: 3px; background: #c49a7a; color: #242522; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-decoration: none; transition: background .25s ease, color .25s ease, transform .25s ease; }
+.project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { background: #e2d2c4; color: #242522; transform: translateY(-2px); }
+.project-detail-casita .casita-role-card a b { font-size: 16px; }
+.project-detail-casita .detail-viewer-nav { border-color: #a9907b; background: #343a35; }
+.project-detail-casita .detail-viewer-nav:hover { background: #655044; }
+.project-detail-casita .detail-viewer-close { background: #9c4941; border-color: #c78170; }
 @keyframes message-pop-editorial { 0% { clip-path: inset(100% 0 0 0); transform: translateY(12px) rotate(5deg); } 100% { clip-path: inset(0); transform: translateY(-100%) rotate(-2deg); } }
 @keyframes message-pop-focus { 0% { clip-path: inset(0 100% 0 0); transform: translate(-16px, -100%) rotate(0); } 100% { clip-path: inset(0); transform: translate(0, -100%) rotate(-2deg); } }
 @keyframes editorial-note { 0% { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(10px) rotate(5deg); } 100% { opacity: 1; clip-path: inset(0); transform: translateY(-100%) rotate(-3deg); } }
@@ -391,3 +512,163 @@ body.is-loading .hero .portrait-placeholder.is-loader-portrait img { width: 100%
   .hover-editorial::after { right: 0; }
   .hover-process::after { bottom: -4.2rem; }
 }
+
+/* Identidad cálida para Casita Colonial y entrada animada de sus casos de estudio */
+.project-casita { background: linear-gradient(128deg, #c4e7d1 0%, #b8d9ca 47%, #ecd8b6 100%); color: #122821; }
+.project-casita::before { position: absolute; inset: 0; background: radial-gradient(ellipse at 88% 12%, rgba(255,255,255,.54), transparent 35%), radial-gradient(ellipse at 6% 92%, rgba(65,137,113,.18), transparent 38%); content: ''; pointer-events: none; }
+.project-casita .project-info { z-index: 2; }
+.project-casita .project-info h3 { font-size: clamp(3.4rem, 6.7vw, 7.3rem); }
+.project-casita .project-info > span { color: #315c4d; opacity: 1; }
+.project-casita .project-description { color: #29483d; }
+.project-casita .project-tags { gap: 7px; margin-top: 22px; }
+.project-casita .project-tags li { border-color: rgba(18,40,33,.2); background: rgba(255,255,255,.28); color: #17372b; }
+.project-casita .project-info a { margin-top: 25px; color: #17372b; }
+.project-casita .project-gallery { aspect-ratio: 1.45 / 1; }
+.project-casita .project-gallery-cover { border-color: rgba(247,238,220,.8); box-shadow: 0 25px 65px rgba(15,43,34,.28); }
+.project-casita .deck-card-back { background: linear-gradient(145deg, #315a4b, #17382f 70%); }
+.project-casita .deck-card-mid { background: linear-gradient(145deg, #c58c51, #8a5f3d 72%); }
+.project-casita .deck-card-front { background: linear-gradient(145deg, #e9d2ae, #376353); }
+.project-detail[open] .project-detail-shell { animation: case-study-enter .72s cubic-bezier(.16,1,.3,1) both; }
+.project-detail[open] .project-detail-hero-image { animation: case-study-enter .9s .08s cubic-bezier(.16,1,.3,1) both; }
+.project-detail[open] .project-detail-grid article { animation: case-card-enter .65s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--case-card-index, 0) * 55ms); }
+.project-detail-grid article:nth-child(1) { --case-card-index: 1; }
+.project-detail-grid article:nth-child(2) { --case-card-index: 2; }
+.project-detail-grid article:nth-child(3) { --case-card-index: 3; }
+.project-detail-grid article:nth-child(4) { --case-card-index: 4; }
+.project-detail-grid article:nth-child(5) { --case-card-index: 5; }
+.project-detail-grid article:nth-child(6) { --case-card-index: 6; }
+.project-detail-grid article:nth-child(7) { --case-card-index: 7; }
+.project-detail-grid article:nth-child(8) { --case-card-index: 8; }
+.project-detail-casita { background: radial-gradient(ellipse at 88% 0%, rgba(191,139,80,.2), transparent 35%), radial-gradient(ellipse at 0% 40%, rgba(29,127,107,.24), transparent 34%), linear-gradient(145deg, #10251f, #102b27 54%, #13221f); }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #d2b07d; }
+.project-detail-casita .detail-eyebrow span { color: #83d3b0; }
+.project-detail-casita .project-detail-hero-image { background: radial-gradient(ellipse at 50% 0%, #739b79, #294f43 48%, #14251f 80%); box-shadow: 0 28px 80px rgba(0,0,0,.3), 0 0 50px rgba(202,164,105,.13); }
+.project-detail-casita .detail-status-dot { background: #85dfa9; box-shadow: 0 0 0 4px rgba(133,223,169,.14), 0 0 16px rgba(133,223,169,.65); }
+.project-detail-casita .detail-tags li { border-color: rgba(218,190,137,.34); background: linear-gradient(130deg, rgba(118,91,52,.3), rgba(27,99,77,.28)); }
+.project-detail-casita .detail-tags li:hover { border-color: #d6b475; background: #827047; }
+.project-detail-casita .project-detail-grid article { border-color: rgba(210,180,125,.2); background: linear-gradient(145deg, rgba(43,80,65,.82), rgba(21,49,41,.94)); }
+.project-detail-casita .project-detail-grid article:nth-child(2n) { background: linear-gradient(145deg, rgba(100,77,48,.5), rgba(33,52,41,.94)); }
+.project-detail-casita .project-detail-grid article:hover { border-color: rgba(218,190,137,.65); box-shadow: 0 18px 40px rgba(0,0,0,.24), 0 0 28px rgba(184,149,90,.12); }
+.project-detail-casita .project-detail-grid article::after { border-color: rgba(218,190,137,.22); }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #d7b878; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: rgba(209,192,151,.2); }
+.project-detail-casita .detail-stack > .mono { color: #d3b579; }
+.project-detail-casita .project-detail-gallery figure { border-color: rgba(211,184,128,.28); background: linear-gradient(145deg, #284c3f, #14261f); }
+.project-detail-casita .casita-role-card { display: grid; grid-template-columns: .35fr 1fr; gap: 18px 36px; align-items: start; padding: clamp(24px, 4vw, 48px); border: 1px solid rgba(211,184,128,.3); border-radius: 16px; background: linear-gradient(125deg, rgba(119,89,49,.24), rgba(38,89,68,.38)); }
+.project-detail-casita .casita-role-card > .mono { color: #d7b878; font-size: 10px; letter-spacing: .13em; }
+.project-detail-casita .casita-role-card p { max-width: 760px; margin: 0; color: #c5d4ca; font-size: 16px; line-height: 1.85; }
+.project-detail-casita .casita-role-card a { grid-column: 2; width: fit-content; margin-top: 4px; color: #d7c08f; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; overflow-wrap: anywhere; }
+.project-detail-casita .casita-role-card a b { padding-left: 5px; }
+.project-detail-casita .casita-gallery { margin-top: 72px; }
+@keyframes case-study-enter { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes case-card-enter { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 800px) {
+  .project-casita .project-info h3 { font-size: clamp(3.5rem, 14vw, 6rem); }
+  .project-detail-casita .casita-role-card { grid-template-columns: 1fr; gap: 15px; }
+  .project-detail-casita .casita-role-card a { grid-column: 1; }
+}
+
+/* Paleta editorial de la casa: piedra, olivo y terracota */
+.project-casita { background: #d9dfcf; color: #272b25; }
+.project-casita::before { background: none; }
+.project-casita .project-info > span { color: #68715e; }
+.project-casita .project-description { color: #41463d; }
+.project-casita .project-tags li { border-color: #a7ad9c; background: #e7e9df; color: #34382f; }
+.project-casita .project-info a { color: #4c5d49; }
+.project-casita .project-gallery-cover { border-color: #f1eee5; box-shadow: 0 18px 40px rgba(39,43,37,.2); }
+.project-casita .deck-card-back { background: #45584a; }
+.project-casita .deck-card-mid { background: #ad7657; }
+.project-casita .deck-card-front { background: #b6bba9; }
+.project-detail-casita { background: #202a24; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #c79772; }
+.project-detail-casita .detail-eyebrow span { color: #a9baa3; }
+.project-detail-casita .project-detail-hero-image { background: #34443a; box-shadow: 0 18px 50px rgba(0,0,0,.22); }
+.project-detail-casita .detail-status-dot { background: #9bb18e; box-shadow: 0 0 0 3px rgba(155,177,142,.16); }
+.project-detail-casita .detail-tags li { border-color: #657767; background: #2d3c32; }
+.project-detail-casita .detail-tags li:hover { border-color: #c79772; background: #665044; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #46584b; background: #29372f; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #9d8065; box-shadow: 0 12px 28px rgba(0,0,0,.2); }
+.project-detail-casita .project-detail-grid article::after { display: none; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #c79772; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #435047; }
+.project-detail-casita .detail-stack > .mono { color: #b9c3ad; }
+.project-detail-casita .project-detail-gallery figure { border-color: #46584b; background: #29372f; }
+.project-detail-casita .casita-role-card { border-color: #596354; background: #2b372f; }
+.project-detail-casita .casita-role-card > .mono { color: #c79772; }
+.project-detail-casita .casita-role-card p { color: #d0d5ca; }
+.project-detail-casita .casita-role-card a { color: #d5ad8e; }
+
+/* Transiciones de apertura, recorrido y ampliación de la colección */
+.project-detail::backdrop { transition: background-color .45s ease, backdrop-filter .45s ease; }
+.project-detail[open]::backdrop { background: rgba(4,10,8,.82); backdrop-filter: blur(10px); }
+.project-detail[open] .project-detail-shell { animation: collection-panel-enter .72s cubic-bezier(.2,.8,.2,1) both; }
+.project-detail[open] .project-detail-header > div,
+.project-detail[open] .project-detail-header > .project-detail-close,
+.project-detail[open] .project-detail-intro,
+.project-detail[open] .detail-stack,
+.project-detail[open] .detail-features-section,
+.project-detail[open] .casita-outcome,
+.project-detail[open] .casita-gallery,
+.project-detail[open] .project-detail-footer { animation: collection-content-enter .7s cubic-bezier(.2,.8,.2,1) both; }
+.project-detail[open] .project-detail-header > div { animation-delay: .08s; }
+.project-detail[open] .project-detail-header > .project-detail-close { animation-delay: .12s; }
+.project-detail[open] .project-detail-hero-image { animation: collection-image-enter .85s .14s cubic-bezier(.2,.8,.2,1) both; }
+.project-detail[open] .project-detail-intro { animation-delay: .2s; }
+.project-detail[open] .detail-stack { animation-delay: .25s; }
+.project-detail[open] .detail-features-section { animation-delay: .3s; }
+.project-detail[open] .casita-outcome { animation-delay: .4s; }
+.project-detail[open] .casita-gallery { animation-delay: .46s; }
+.project-detail[open] .project-detail-footer { animation-delay: .5s; }
+.project-detail[open] .project-detail-grid article { animation: collection-card-enter .62s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(.34s + var(--case-card-index, 0) * 65ms); }
+.project-detail-hero-image { transition: box-shadow .45s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.project-detail-hero-image:hover { transform: translateY(-3px); }
+.detail-image-open img, .detail-hero-image-open img { transition: transform .65s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
+.detail-image-open:hover img, .detail-image-open:focus-visible img,
+.detail-hero-image-open:hover img, .detail-hero-image-open:focus-visible img { transform: scale(1.035); filter: brightness(1.04); }
+.detail-image-viewer:not([hidden]) { animation: image-viewer-enter .3s ease both; }
+.detail-image-viewer:not([hidden]) .detail-viewer-image { animation: image-focus-enter .42s cubic-bezier(.2,.8,.2,1) both; }
+.detail-viewer-close, .detail-viewer-nav { transition: transform .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease, box-shadow .25s ease; }
+.project-detail-casita .detail-viewer-nav { border-color: rgba(201,166,132,.52); background: rgba(54,73,60,.9); color: #f4eee4; }
+.project-detail-casita .detail-viewer-nav:hover { background: #725844; }
+.project-detail-casita .detail-viewer-close { background: #a64d41; border-color: #d18b74; }
+@keyframes collection-panel-enter { from { opacity: 0; transform: translateY(14px) scale(.992); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes collection-content-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes collection-image-enter { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes collection-card-enter { from { opacity: 0; transform: translateY(17px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes image-viewer-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes image-focus-enter { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .project-detail[open] .project-detail-shell, .project-detail[open] .project-detail-header > div,
+  .project-detail[open] .project-detail-header > .project-detail-close, .project-detail[open] .project-detail-hero-image,
+  .project-detail[open] .project-detail-intro, .project-detail[open] .detail-stack,
+  .project-detail[open] .detail-features-section, .project-detail[open] .casita-outcome,
+  .project-detail[open] .casita-gallery, .project-detail[open] .project-detail-footer,
+  .project-detail[open] .project-detail-grid article, .detail-image-viewer:not([hidden]),
+  .detail-image-viewer:not([hidden]) .detail-viewer-image { animation: none; }
+}
+
+/* Última capa de color: se declara al final para prevalecer sobre los estilos responsivos */
+.project-casita { background: #e9e6de; color: #272823; }
+.project-casita .project-info > span { color: #76766e; }
+.project-casita .project-description { color: #4c4d47; }
+.project-casita .project-tags li { border-color: #c7c3b9; background: #f7f5ef; color: #353630; }
+.project-casita .deck-card-back { background: #49534b; }
+.project-casita .deck-card-mid { background: #a26850; }
+.project-casita .deck-card-front { background: #bbb9ad; }
+.project-casita .project-info .casita-live-link { min-height: 50px; gap: 30px; padding: 0 23px; border-color: #96553f; background: #96553f; color: #fffaf4; font-size: 12px; font-weight: 700; letter-spacing: .1em; box-shadow: 0 8px 18px rgba(87,54,42,.18); }
+.project-casita .project-info .casita-live-link:hover, .project-casita .project-info .casita-live-link:focus-visible { border-color: #75402f; background: #75402f; color: #fff; box-shadow: 0 11px 24px rgba(87,54,42,.24); }
+.project-detail-casita { background: #222522; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #c18a6d; }
+.project-detail-casita .project-detail-hero-image { background: #343a35; }
+.project-detail-casita .detail-tags li { border-color: #555d56; background: #303632; color: #eceae3; }
+.project-detail-casita .detail-tags li:hover { border-color: #c18a6d; background: #57463b; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #464c47; background: #2b302c; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #a7795f; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #c18a6d; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #444a45; }
+.project-detail-casita .detail-stack > .mono { color: #c9c9c1; }
+.project-detail-casita .project-detail-gallery figure, .project-detail-casita .casita-role-card { border-color: #464c47; background: #2b302c; }
+.project-detail-casita .casita-role-card > .mono { color: #c18a6d; }
+.project-detail-casita .casita-role-card p { color: #d5d4cd; }
+.project-detail-casita .casita-role-card a { border-color: #a8654b; background: #a8654b; color: #fffaf4; font-size: 11px; box-shadow: 0 8px 18px rgba(0,0,0,.2); }
+.project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { background: #854b38; color: #fff; }

@@ -2,8 +2,6 @@ const cursor = document.querySelector('.cursor');
 const header = document.querySelector('.site-header');
 const projectSection = document.querySelector('.projects');
 const projectCards = [...document.querySelectorAll('.project')];
-const projectDetail = document.querySelector('#project-one-detail');
-const detailImageViewer = projectDetail.querySelector('.detail-image-viewer');
 const focusText = document.querySelector('.about-lead');
 const hero = document.querySelector('.hero');
 const portrait = document.querySelector('.portrait-placeholder');
@@ -18,65 +16,71 @@ const loaderSheet = document.querySelector('.loader-sheet');
 let portraitTarget = null;
 document.body.classList.add('is-loading');
 
-document.querySelector('.project-collection-open').addEventListener('click', () => projectDetail.showModal());
-projectDetail.querySelector('.project-detail-close').addEventListener('click', () => projectDetail.close());
-projectDetail.addEventListener('click', (event) => {
-  if (event.target === projectDetail) projectDetail.close();
+document.querySelectorAll('.project-collection-open').forEach((button) => {
+  const detail = document.getElementById(button.getAttribute('aria-controls'));
+  button.addEventListener('click', () => detail?.showModal());
 });
 
-const detailImageButtons = [...projectDetail.querySelectorAll('.detail-image-open')];
-const detailViewerImage = detailImageViewer.querySelector('.detail-viewer-image');
-const detailViewerCaption = detailImageViewer.querySelector('.detail-viewer-caption');
-let detailViewerIndex = 0;
+document.querySelectorAll('.project-detail').forEach((projectDetail) => {
+  const detailImageViewer = projectDetail.querySelector('.detail-image-viewer');
+  projectDetail.querySelector('.project-detail-close').addEventListener('click', () => projectDetail.close());
+  projectDetail.addEventListener('click', (event) => {
+    if (event.target === projectDetail) projectDetail.close();
+  });
+  if (!detailImageViewer) return;
 
-const showDetailImage = (index) => {
-  detailViewerIndex = (index + detailImageButtons.length) % detailImageButtons.length;
-  const button = detailImageButtons[detailViewerIndex];
-  const image = button.querySelector('img');
-  detailViewerImage.src = image.currentSrc || image.src;
-  detailViewerImage.alt = image.alt;
-  detailViewerCaption.textContent = `${String(detailViewerIndex + 1).padStart(2, '0')} / ${String(detailImageButtons.length).padStart(2, '0')}  ·  ${button.closest('figure').querySelector('figcaption').textContent}`;
-};
-
-const closeDetailImageViewer = () => {
-  detailImageViewer.hidden = true;
-  detailImageButtons[detailViewerIndex].focus();
-};
-
-detailImageButtons.forEach((button, index) => button.addEventListener('click', () => {
-  showDetailImage(index);
-  detailImageViewer.hidden = false;
-  detailImageViewer.querySelector('.detail-viewer-close').focus();
-}));
-detailImageViewer.querySelector('.detail-viewer-close').addEventListener('click', closeDetailImageViewer);
-detailImageViewer.querySelector('.detail-viewer-prev').addEventListener('click', () => showDetailImage(detailViewerIndex - 1));
-detailImageViewer.querySelector('.detail-viewer-next').addEventListener('click', () => showDetailImage(detailViewerIndex + 1));
-detailImageViewer.addEventListener('click', (event) => {
-  if (event.target === detailImageViewer) closeDetailImageViewer();
-});
-projectDetail.addEventListener('cancel', (event) => {
-  if (!detailImageViewer.hidden) {
-    event.preventDefault();
-    closeDetailImageViewer();
-  }
-});
-projectDetail.addEventListener('keydown', (event) => {
-  if (detailImageViewer.hidden) return;
-  if (event.key === 'ArrowLeft') showDetailImage(detailViewerIndex - 1);
-  if (event.key === 'ArrowRight') showDetailImage(detailViewerIndex + 1);
-});
-detailImageViewer.addEventListener('keydown', (event) => {
-  if (event.key !== 'Tab') return;
-  const controls = [...detailImageViewer.querySelectorAll('button')];
-  const firstControl = controls[0];
-  const lastControl = controls[controls.length - 1];
-  if (event.shiftKey && document.activeElement === firstControl) {
-    event.preventDefault();
-    lastControl.focus();
-  } else if (!event.shiftKey && document.activeElement === lastControl) {
-    event.preventDefault();
-    firstControl.focus();
-  }
+  const detailImageButtons = [...projectDetail.querySelectorAll('.detail-image-open')];
+  const detailViewerImage = detailImageViewer.querySelector('.detail-viewer-image');
+  const detailViewerCaption = detailImageViewer.querySelector('.detail-viewer-caption');
+  let detailViewerIndex = 0;
+  const showDetailImage = (index) => {
+    detailViewerIndex = (index + detailImageButtons.length) % detailImageButtons.length;
+    const button = detailImageButtons[detailViewerIndex];
+    const image = button.querySelector('img');
+    const caption = button.closest('figure')?.querySelector('figcaption')?.textContent || image.alt;
+    detailViewerImage.src = image.currentSrc || image.src;
+    detailViewerImage.alt = image.alt;
+    detailViewerCaption.textContent = `${String(detailViewerIndex + 1).padStart(2, '0')} / ${String(detailImageButtons.length).padStart(2, '0')}  ·  ${caption}`;
+  };
+  const closeDetailImageViewer = () => {
+    detailImageViewer.hidden = true;
+    detailImageButtons[detailViewerIndex].focus();
+  };
+  detailImageButtons.forEach((button, index) => button.addEventListener('click', () => {
+    showDetailImage(index);
+    detailImageViewer.hidden = false;
+    detailImageViewer.querySelector('.detail-viewer-close').focus();
+  }));
+  detailImageViewer.querySelector('.detail-viewer-close').addEventListener('click', closeDetailImageViewer);
+  detailImageViewer.querySelector('.detail-viewer-prev').addEventListener('click', () => showDetailImage(detailViewerIndex - 1));
+  detailImageViewer.querySelector('.detail-viewer-next').addEventListener('click', () => showDetailImage(detailViewerIndex + 1));
+  detailImageViewer.addEventListener('click', (event) => {
+    if (event.target === detailImageViewer) closeDetailImageViewer();
+  });
+  projectDetail.addEventListener('cancel', (event) => {
+    if (!detailImageViewer.hidden) {
+      event.preventDefault();
+      closeDetailImageViewer();
+    }
+  });
+  projectDetail.addEventListener('keydown', (event) => {
+    if (detailImageViewer.hidden) return;
+    if (event.key === 'ArrowLeft') showDetailImage(detailViewerIndex - 1);
+    if (event.key === 'ArrowRight') showDetailImage(detailViewerIndex + 1);
+  });
+  detailImageViewer.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return;
+    const controls = [...detailImageViewer.querySelectorAll('button')];
+    const firstControl = controls[0];
+    const lastControl = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === firstControl) {
+      event.preventDefault();
+      lastControl.focus();
+    } else if (!event.shiftKey && document.activeElement === lastControl) {
+      event.preventDefault();
+      firstControl.focus();
+    }
+  });
 });
 
 const terminalLines = [
