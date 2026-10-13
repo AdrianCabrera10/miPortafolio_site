@@ -372,6 +372,60 @@ body.is-loading .hero .portrait-placeholder.is-loader-portrait img { width: 100%
 .project-detail-casita .casita-role-card a { border-color: #a8654b; background: #a8654b; color: #fffaf4; font-size: 11px; box-shadow: 0 8px 18px rgba(0,0,0,.2); }
 .project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { background: #854b38; color: #fff; }
 
+/* Paleta actualizada de la colección Casita: azul pizarra y salvia */
+.project-detail-casita { background: #172128; color: #f0f1ec; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #a9c2bd; }
+.project-detail-casita .detail-eyebrow span { color: #d1ddd8; }
+.project-detail-casita .project-detail-hero-image { background: #253840; box-shadow: 0 18px 48px rgba(0,0,0,.24); }
+.project-detail-casita .detail-status-dot { background: #8ab8a4; box-shadow: 0 0 0 3px rgba(138,184,164,.14); }
+.project-detail-casita .detail-tags li { border-color: #51646a; background: #243139; color: #e7eeea; }
+.project-detail-casita .detail-tags li:hover { border-color: #9bb9b1; background: #38534f; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #789b94; box-shadow: 0 12px 26px rgba(0,0,0,.2); }
+.project-detail-casita .project-detail-grid article::after { display: none; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #a9c2bd; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #39484d; }
+.project-detail-casita .detail-stack > .mono { color: #b9c8c4; }
+.project-detail-casita .project-detail-gallery figure, .project-detail-casita .casita-role-card { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .casita-role-card > .mono { color: #a9c2bd; }
+.project-detail-casita .casita-role-card p { color: #d0d9d5; }
+.project-detail-casita .casita-role-card a { border-color: #76988f; background: #76988f; color: #16221f; box-shadow: none; }
+.project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { border-color: #aec7bd; background: #aec7bd; color: #172128; }
+.project-detail-casita .detail-viewer-nav { border-color: #78948f; background: #243139; }
+.project-detail-casita .detail-viewer-nav:hover { background: #38534f; }
+
+/* Paleta profesional para la colección Casita: azul pizarra y salvia */
+.project-detail-casita { background: #172128; color: #f0f1ec; }
+.project-detail-casita .detail-eyebrow,
+.project-detail-casita .detail-section-index,
+.project-detail-casita .detail-section-heading > p { color: #a9c2bd; }
+.project-detail-casita .detail-eyebrow span { color: #d1ddd8; }
+.project-detail-casita .project-detail-hero-image { background: #253840; box-shadow: 0 18px 48px rgba(0,0,0,.24); }
+.project-detail-casita .detail-status-dot { background: #8ab8a4; box-shadow: 0 0 0 3px rgba(138,184,164,.14); }
+.project-detail-casita .detail-tags li { border-color: #51646a; background: #243139; color: #e7eeea; }
+.project-detail-casita .detail-tags li:hover { border-color: #9bb9b1; background: #38534f; }
+.project-detail-casita .project-detail-grid article,
+.project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #789b94; box-shadow: 0 12px 26px rgba(0,0,0,.2); }
+.project-detail-casita .project-detail-grid article::after { display: none; }
+.project-detail-casita .project-detail-grid .mono,
+.project-detail-casita .project-detail-footer .mono { color: #a9c2bd; }
+.project-detail-casita .detail-gallery-section,
+.project-detail-casita .detail-facts,
+.project-detail-casita .detail-facts > div,
+.project-detail-casita .detail-stack,
+.project-detail-casita .project-detail-footer { border-color: #39484d; }
+.project-detail-casita .detail-stack > .mono { color: #b9c8c4; }
+.project-detail-casita .project-detail-gallery figure,
+.project-detail-casita .casita-role-card { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .casita-role-card > .mono { color: #a9c2bd; }
+.project-detail-casita .casita-role-card p { color: #d0d9d5; }
+.project-detail-casita .casita-role-card a { border-color: #76988f; background: #76988f; color: #16221f; box-shadow: none; }
+.project-detail-casita .casita-role-card a:hover,
+.project-detail-casita .casita-role-card a:focus-visible { border-color: #aec7bd; background: #aec7bd; color: #172128; }
+.project-detail-casita .detail-viewer-nav { border-color: #78948f; background: #243139; }
+.project-detail-casita .detail-viewer-nav:hover { background: #38534f; }
+
 /* Ajuste final del tercer proyecto y legibilidad del título */
 .project-acprogramador .project-info h3 { font-size: clamp(2.8rem, 4.8vw, 5.5rem); }
 .project-detail-acprogramador .project-detail-header h2 { font-size: clamp(3.5rem, 8vw, 8.8rem); }
@@ -672,3 +726,25 @@ body.is-loading .hero .portrait-placeholder.is-loader-portrait img { width: 100%
 .project-detail-casita .casita-role-card p { color: #d5d4cd; }
 .project-detail-casita .casita-role-card a { border-color: #a8654b; background: #a8654b; color: #fffaf4; font-size: 11px; box-shadow: 0 8px 18px rgba(0,0,0,.2); }
 .project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { background: #854b38; color: #fff; }
+
+/* Paleta profesional para la colección Casita: azul pizarra y salvia */
+.project-detail-casita { background: #172128; color: #f0f1ec; }
+.project-detail-casita .detail-eyebrow, .project-detail-casita .detail-section-index, .project-detail-casita .detail-section-heading > p { color: #a9c2bd; }
+.project-detail-casita .detail-eyebrow span { color: #d1ddd8; }
+.project-detail-casita .project-detail-hero-image { background: #253840; box-shadow: 0 18px 48px rgba(0,0,0,.24); }
+.project-detail-casita .detail-status-dot { background: #8ab8a4; box-shadow: 0 0 0 3px rgba(138,184,164,.14); }
+.project-detail-casita .detail-tags li { border-color: #51646a; background: #243139; color: #e7eeea; }
+.project-detail-casita .detail-tags li:hover { border-color: #9bb9b1; background: #38534f; }
+.project-detail-casita .project-detail-grid article, .project-detail-casita .project-detail-grid article:nth-child(2n) { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .project-detail-grid article:hover { border-color: #789b94; box-shadow: 0 12px 26px rgba(0,0,0,.2); }
+.project-detail-casita .project-detail-grid article::after { display: none; }
+.project-detail-casita .project-detail-grid .mono, .project-detail-casita .project-detail-footer .mono { color: #a9c2bd; }
+.project-detail-casita .detail-gallery-section, .project-detail-casita .detail-facts, .project-detail-casita .detail-facts > div, .project-detail-casita .detail-stack, .project-detail-casita .project-detail-footer { border-color: #39484d; }
+.project-detail-casita .detail-stack > .mono { color: #b9c8c4; }
+.project-detail-casita .project-detail-gallery figure, .project-detail-casita .casita-role-card { border-color: #3b4b50; background: #202d34; }
+.project-detail-casita .casita-role-card > .mono { color: #a9c2bd; }
+.project-detail-casita .casita-role-card p { color: #d0d9d5; }
+.project-detail-casita .casita-role-card a { border-color: #76988f; background: #76988f; color: #16221f; box-shadow: none; }
+.project-detail-casita .casita-role-card a:hover, .project-detail-casita .casita-role-card a:focus-visible { border-color: #aec7bd; background: #aec7bd; color: #172128; }
+.project-detail-casita .detail-viewer-nav { border-color: #78948f; background: #243139; }
+.project-detail-casita .detail-viewer-nav:hover { background: #38534f; }
